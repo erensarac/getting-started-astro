@@ -1,7 +1,29 @@
 ---
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Home Page";
 ---
-<BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+<BaseLayout>
+  <main class="flex-1 flex items-center justify-center">
+    <div class="container mx-auto px-4 max-w-[960px] py-16 md:py-22">
+      <div class="text-center space-y-6 max-w-2xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
+          Astro <span class="text-primary">Blog</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-muted-foreground">
+          A clean, minimal blog focused on web development, design, and technology.
+        </p>
+        
+        <div class="pt-8 flex justify-center">
+          <Button size="lg" className="px-8">
+            <a href="/blog" class="flex items-center">
+              Explore Articles
+              <ArrowRight class="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </main>
 </BaseLayout>

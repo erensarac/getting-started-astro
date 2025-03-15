@@ -1,39 +1,58 @@
 ---
-import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
+import BaseLayout from "./BaseLayout.astro";
+import { ArrowLeft, CalendarIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { formatDate } from "@/lib/utils";
 ---
-<BaseLayout pageTitle={frontmatter.title}>
-  <p>{frontmatter.pubDate.toLocaleDateString()}</p>
-  <p><em>{frontmatter.description}</em></p>
 
-  <p>Written by: {frontmatter.author}</p>
+<BaseLayout>
+  <main class="flex-1">
+    <article class="container mx-auto max-w-[960px]">
+      <div class="max-w-3xl mx-auto mb-10">
+        <div class="mb-8">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="pl-0 hover:pl-1 transition-all duration-200"
+          >
+            <a
+              href="/blog"
+              class="flex items-center text-muted-foreground hover:text-foreground"
+            >
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to blog
+            </a>
+          </Button>
+        </div>
 
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+        <header class="mb-8">
+          <div class="flex items-center text-sm text-muted-foreground mb-3">
+            <span class="mr-2">By {frontmatter.author}</span>
+            <span class="mx-2">•</span>
+            <CalendarIcon className="h-4 w-4 mr-1" />
+            <time>{formatDate(frontmatter.pubDate)}</time>
+          </div>
 
-  <div class="tags">
-    {frontmatter.tags.map((tag: string) => (
-      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-    ))}
-  </div>
+          <h1 class="text-3xl md:text-4xl font-bold mb-4">
+            {frontmatter.title}
+          </h1>
 
-  <slot />
+          <p class="text-lg text-muted-foreground">{frontmatter.description}</p>
+        </header>
+
+        <div
+          class="relative w-full h-[300px] md:h-[400px] mb-10 overflow-hidden"
+        >
+          <img
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt}
+            class="rounded-lg object-cover"
+          />
+        </div>
+
+        <slot />
+      </div>
+    </article>
+  </main>
 </BaseLayout>
-<style>
-  a {
-    color: #00539F;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: .5em;
-    padding: .5em 1em;
-    font-size: 1.15em;
-    background-color: #F8FCFD;
-  }
-</style>

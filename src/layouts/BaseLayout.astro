@@ -1,7 +1,10 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import "../styles/global.css";
+import "@/styles/global.css";
+import '@fontsource-variable/geist';
+
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
 const { pageTitle } = Astro.props;
 ---
 
@@ -21,8 +24,5 @@ const { pageTitle } = Astro.props;
       </div>
     </main>
     <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
   </body>
 </html>

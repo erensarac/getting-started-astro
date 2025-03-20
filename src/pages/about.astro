@@ -1,79 +1,59 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const pageTitle = "About Me";
-
-const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = true;
-const goal = 3;
-
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>... and my new Astro site!</h2>
+  <main class="flex-1">
+    <div class="container mx-auto px-6 max-w-[960px] pb-12 md:pb-16">
+      <div class="max-w-2xl mx-auto">
+        <div class="prose prose-zinc dark:prose-invert max-w-none">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Bio</h2>
+          <p class="text-md sm:text-lg leading-relaxed mb-6">
+            Self-taught frontend-focused developer with strong experience in web
+            technologies, primarily React, along with Angular and Vue.
+            Comfortable integrating REST and GraphQL APIs into applications and
+            familiar with backend technologies such as Node.js (Express,
+            Fastify, NestJS), PostgreSQL, and MongoDB. Practical knowledge of
+            DevOps tools like Docker and GitHub Actions. Besides my software
+            skills, I enjoy designing clean, intuitive, and user-centered
+            interfaces using Figma.
+          </p>
 
-  <p>
-    I am working through Astro's introductory tutorial. This is the second page
-    on my website, and it's the first one I built myself!
-  </p>
-
-  <p>
-    This site will update as I complete more of the tutorial, so keep checking
-    back and see how my journey is going!
-  </p>
-
-  <p>Here are a few facts about me:</p>
-
-  {happy && <p>I am happy to be learning Astro!</p>}
-
-  {finished && <p>I finished this tutorial!</p>}
-
-  {
-    goal === 3 ? (
-      <p>My goal is to finish in 3 days.</p>
-    ) : (
-      <p>My goal is not 3 days.</p>
-    )
-  }
-
-  <ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-    {
-      identity.hobbies.length >= 2 && (
-        <li>
-          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
-        </li>
-      )
-    }
-  </ul>
-  <p>My skills are:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+            About This Website
+          </h2>
+          <p class="text-md sm:text-lg leading-relaxed mb-6">
+            While learning Astro, I started by developing the project from the
+            <a
+              class="font-italic underline"
+              href="https://docs.astro.build/en/tutorial/0-introduction/"
+              >Build your first Astro Blog</a
+            > tutorial. After completing the project, I decided to keep its core
+            content intact but transform it into a full-fledged blog site. During
+            this process, I enhanced the design of all the pages, layouts, and components,
+            focusing on both the layout and content. I used the following stack to
+            bring the website to its final form: <a
+              class="font-semibold"
+              href="https://astro.build/">Astro</a
+            >, <a class="font-semibold" href="https://v0.dev/">v0</a>, <a
+              class="font-semibold"
+              href="https://ui.shadcn.com/">shadcn/ui</a
+            > and <a class="font-semibold" href="https://tailwindcss.com/"
+              >Tailwind</a
+            >. The site is hosted on <a
+              class="font-semibold"
+              href="https://www.netlify.com/">Netlify</a
+            >, and the project is open source on
+            <a
+              class="font-semibold"
+              href="https://github.com/erensarac/getting-started-astro"
+              >GitHub</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
 </BaseLayout>
-
-<style is:global define:vars={{ skillColor, fontWeight, textCase }}>
-  h1 {
-    color: purple;
-    font-size: 4rem;
-  }
-
-  .skill {
-    color: var(--skillColor);
-    font-weight: var(--fontWeight);
-    text-transform: var(--textCase);
-  }
-</style>

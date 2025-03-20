@@ -164,10 +164,6 @@ code {
   @apply font-mono text-sm;
 }
 
-.prose a {
-  @apply text-primary hover:underline;
-}
-
 /* Blog Post Content Styles */
 .blog-content h1 {
   @apply text-3xl md:text-4xl font-bold mt-10 mb-6;

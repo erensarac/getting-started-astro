@@ -1,5 +1,5 @@
 ---
-import { ArrowUp, Github, GitBranch } from "lucide-astro";
+import { ArrowUp, Github, GitBranch } from "lucide-react";
 import { Button } from "@/components/ui/button";
 ---
 
@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
           className="rounded-full bg-background/80 hover:bg-background"
           aria-label="Scroll to top"
         >
-          <ArrowUp class="h-4 w-4 mr-2" />
+          <ArrowUp className="h-4 w-4 mr-2" />
           Back to top
         </Button>
       </div>
@@ -27,7 +27,7 @@ import { Button } from "@/components/ui/button";
           class="text-muted-foreground hover:text-primary transition-colors"
           aria-label="GitHub"
         >
-          <Github class="h-5 w-5" />
+          <Github className="h-5 w-5" />
         </a>
 
         <a
@@ -37,7 +37,7 @@ import { Button } from "@/components/ui/button";
           class="text-muted-foreground hover:text-primary transition-colors"
           aria-label="Source Code"
         >
-          <GitBranch class="h-5 w-5" />
+          <GitBranch className="h-5 w-5" />
         </a>
       </div>
     </div>

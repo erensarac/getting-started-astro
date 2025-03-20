@@ -44,9 +44,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      lucide-astro:
-        specifier: ^0.479.0
-        version: 0.479.0(astro@5.1.9(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.31.0)(typescript@5.7.3))
       lucide-react:
         specifier: ^0.479.0
         version: 0.479.0(react@19.0.0)
@@ -1597,11 +1594,6 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
-
-  lucide-astro@0.479.0:
-    resolution: {integrity: sha512-IPRUnnBcwQe/rQSlMR1QDB1Od/o2fXFwZfChc0Yz5pPvTj8Rn3YybVo/ymRUP95Yj5LJkC1R2EKKLZKcV15Aeg==}
-    peerDependencies:
-      astro: '>=2.7.1'
 
   lucide-react@0.479.0:
     resolution: {integrity: sha512-aBhNnveRhorBOK7uA4gDjgaf+YlHMdMhQ/3cupk6exM10hWlEU+2QtWYOfhXhjAsmdb6LeKR+NZnow4UxRRiTQ==}
@@ -3850,10 +3842,6 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
-
-  lucide-astro@0.479.0(astro@5.1.9(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.31.0)(typescript@5.7.3)):
-    dependencies:
-      astro: 5.1.9(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.31.0)(typescript@5.7.3)
 
   lucide-react@0.479.0(react@19.0.0):
     dependencies:

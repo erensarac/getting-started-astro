@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
-import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
+import MarkdownPostLayout from "@/layouts/MarkdownPostLayout.astro";
+import Prose from "@/components/Prose.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -15,7 +16,7 @@ const { Content } = await render(post);
 ---
 
 <MarkdownPostLayout frontmatter={post.data}>
-  <div class="prose prose-zinc dark:prose-invert max-w-none">
+  <Prose>
     <Content />
-  </div>
+  </Prose>
 </MarkdownPostLayout>

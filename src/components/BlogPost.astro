@@ -4,10 +4,10 @@ import { formatDate } from "@/lib/utils";
 const { title, slug, pubDate } = Astro.props;
 ---
 
-<article class="border-b border-border/20 last:border-0">
+<article class="border-b border-zinc-400/30 dark:border-zinc-700/50 last:border-0">
   <a
     href={`/posts/${slug}`}
-    class="flex justify-between items-center py-6 group hover:bg-muted/20 transition-colors px-2 -mx-2 rounded-md"
+    class="flex justify-between items-center py-6 group hover:bg-muted/80 dark:hover:bg-muted/20 transition-colors px-2 -mx-2 rounded-md"
   >
     <h2
       class="text-xl font-medium group-hover:text-primary transition-colors pr-4"

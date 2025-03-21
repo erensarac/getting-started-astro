@@ -8,17 +8,17 @@ import { Button } from "@/components/ui/button";
     <div class="flex flex-col md:flex-row justify-between items-center">
       <div class="mb-4 md:mb-0">
         <Button
-        id="scroll-to-top"
+          id="scroll-to-top"
           variant="outline"
           size="sm"
-          className="rounded-full bg-background/80 hover:bg-background"
+          className="rounded-full bg-zinc-400/50 hover:bg-zinc-400 dark:bg-background/80 dark:hover:bg-background"
           aria-label="Scroll to top"
         >
           <ArrowUp className="h-4 w-4 mr-2" />
           Back to top
         </Button>
       </div>
-      
+
       <div class="flex items-center space-x-5">
         <a
           href="https://github.com/erensarac/"
@@ -58,5 +58,7 @@ import { Button } from "@/components/ui/button";
     });
   }
 
-  document.getElementById("scroll-to-top")?.addEventListener("click", scrollToTop);
+  document
+    .getElementById("scroll-to-top")
+    ?.addEventListener("click", scrollToTop);
 </script>

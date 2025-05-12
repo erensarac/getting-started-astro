@@ -1,8 +1,8 @@
 ---
 const { frontmatter } = Astro.props;
 import BaseLayout from "./BaseLayout.astro";
-import { ArrowLeft, CalendarIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { CalendarIcon } from "lucide-react";
+import GoBack from "@/components/GoBack.astro";
 import { formatDate } from "@/lib/utils";
 ---
 
@@ -11,19 +11,7 @@ import { formatDate } from "@/lib/utils";
     <article class="container mx-auto max-w-[960px]">
       <div class="max-w-3xl mx-auto mb-10">
         <div class="mb-8">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="pl-0 hover:pl-1 transition-all duration-200"
-          >
-            <a
-              href="/blog"
-              class="flex items-center text-muted-foreground hover:text-foreground"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to blog
-            </a>
-          </Button>
+          <GoBack client:idle />
         </div>
 
         <header class="mb-8">

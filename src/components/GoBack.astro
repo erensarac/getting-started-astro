@@ -1,0 +1,39 @@
+---
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+---
+
+<Button
+  variant="ghost"
+  size="sm"
+  className="pl-0 hover:pl-1 transition-all duration-200"
+>
+  <a
+    aria-label="Go back"
+    class="flex items-center text-muted-foreground hover:text-foreground"
+  >
+    <ArrowLeft className="h-4 w-4 mr-2" />
+    <span>Back to home</span>
+  </a>
+</Button>
+
+<script>
+  import { getPreviousURLSegments } from "@/lib/utils";
+
+  const buttonElement = document.querySelector('a[aria-label="Go back"]')!;
+  const buttonTextElement = document.querySelector('a[aria-label="Go back"] > span')!;
+
+  const segments = getPreviousURLSegments(document.referrer);
+
+  if (segments && window.location.href !== document.referrer) {
+    const segmentTag = segments[1] || segments[0];
+    const tagFormatted = `${decodeURIComponent(segmentTag)} tag`;
+
+    buttonTextElement.textContent = `Back to ${tagFormatted}`;
+    buttonElement.setAttribute('href', document.referrer);
+  } else {
+    buttonTextElement.textContent = "Back to home"; 
+    buttonElement.setAttribute('href', "/");
+  }
+
+</script>

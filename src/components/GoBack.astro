@@ -26,8 +26,7 @@ import { Button } from "@/components/ui/button";
   const segments = getPreviousURLSegments(document.referrer);
 
   if (segments && window.location.href !== document.referrer) {
-    const segmentTag = segments[1] || segments[0];
-    const tagFormatted = `${decodeURIComponent(segmentTag)} tag`;
+    const tagFormatted = segments[1] ? `${decodeURIComponent(segments[1])} tag` : segments[0];
 
     buttonTextElement.textContent = `Back to ${tagFormatted}`;
     buttonElement.setAttribute('href', document.referrer);

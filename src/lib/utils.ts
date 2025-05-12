@@ -13,3 +13,11 @@ export function formatDate(input: string | number | Date): string {
     day: "numeric",
   });
 };
+
+export function getPreviousURLSegments(referrer: string): string[] | null {
+  if (referrer) {
+    return new URL(referrer).pathname.split("/").filter(Boolean)
+  }
+
+  return null;
+}
